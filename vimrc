@@ -21,18 +21,13 @@ set nowritebackup
 " 50 lines of command line history
 set history=100
 
-" incremental search
-set incsearch
+set gdefault				" regex defaults to g
+set hlsearch				" Highlight searched things
+set incsearch				" incremental search
 
 " Set ignorecase on
 set ignorecase
 set smartcase
-
-" Highlight searched things
-set hlsearch
-
-" Incremental search
-set incsearch
 
 " Syntax highlighting
 syntax on
@@ -63,6 +58,21 @@ set textwidth=0 wrapmargin=0
 " Visual wrapping enabled
 set wrap
 
+" Command completion more useful
+set wildmenu " Show many options
+set wildmode=list:longest  " Complete up to point of ambiguity
+
+" Show window title
+set title
+
+set visualbell		" don't beep
+set noerrorbells	" don't beep
+
+set hidden          " Allow buffers to go into the background
+
+" Make paste mode easy
+set pastetoggle=<F2>
+
 " Map jk to esc
 inoremap jk <Esc>
 " Map x so it doesn't record (we don't need single characters in registers)
@@ -77,23 +87,17 @@ cnoreabbrev W w
 nnoremap j gj
 nnoremap k gk
 
+" Make moving around windows easier
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+nnoremap <leader><space> :nohlsearch<CR>		" clear search with ,space
+
 " Better leader
 let mapleader = ","
 
-" Command completion more useful
-set wildmenu " Show many options
-set wildmode=list:longest  " Complete up to point of ambiguity
-
-" Show window title
-set title
-
-set visualbell		" don't beep
-set noerrorbells	" don't beep
-
-" Make paste mode easy
-set pastetoggle=<F2>
-
-set hidden          " Allow buffers to go into the background
 
 " Haskell options
 au FileType haskell setlocal tabstop=8 expandtab softtabstop=4 shiftwidth=4 smarttab shiftround nojoinspaces

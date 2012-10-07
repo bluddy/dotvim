@@ -52,6 +52,7 @@ set showmatch
 set whichwrap=b,s,h,l,<,>,[,]
 
 set background=light
+colorscheme solarized
 
 set clipboard=unnamed
 

@@ -1,4 +1,4 @@
-call pathogen#infect()
+call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 set nocompatible " vim rather than vi settings
@@ -52,6 +52,8 @@ set showmatch
 set whichwrap=b,s,h,l,<,>,[,]
 
 set background=light
+"colorscheme solarized
+"let g:solarized_termcolors=256
 
 set clipboard=unnamed
 
@@ -71,17 +73,25 @@ nnoremap Y y$
 " other letter
 cnoreabbrev W w
 
-" Replace j with gj and k with gk: walking up and down virtual lines
-" vmap <D-j> gj
-" vmap <D-k> gk
-" vmap <D-4> g$
-" vmap <D-6> g^
-" vmap <D-0> g^
-" nmap <D-j> gj
-" nmap <D-k> gk
-" nmap <D-4> g$
-" nmap <D-6> g^
-" nmap <D-0> g^
+" Make going down/up long lines easier
+nnoremap j gj
+nnoremap k gk
+
+" Better leader
+let mapleader = ","
+
+" Command completion more useful
+set wildmenu " Show many options
+set wildmode=list:longest  " Complete up to point of ambiguity
+
+" Show window title
+set title
+
+set visualbell		" don't beep
+set noerrorbells	" don't beep
+
+" Make paste mode easy
+set pastetoggle=<F2>
 
 " Haskell options
 au FileType haskell setlocal tabstop=8 expandtab softtabstop=4 shiftwidth=4 smarttab shiftround nojoinspaces

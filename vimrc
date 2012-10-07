@@ -106,6 +106,7 @@ set grepprg=grep\ -nH\ $*
 " For Alternate extension. Allow switching between interface and source ocaml
 " files
 let g:alternateExtensions_ML="mli"
+let g:LustyJugglerSuppressRubyWarning=1  " Suppress Lusty Juggler's ruby messages
 
 if has("autocmd")
 	" Allow .. instead of :edit %:h when browsing in fugitive (git) trees

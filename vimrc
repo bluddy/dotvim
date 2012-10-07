@@ -93,6 +93,8 @@ set noerrorbells	" don't beep
 " Make paste mode easy
 set pastetoggle=<F2>
 
+set hidden          " Allow buffers to go into the background
+
 " Haskell options
 au FileType haskell setlocal tabstop=8 expandtab softtabstop=4 shiftwidth=4 smarttab shiftround nojoinspaces
 
